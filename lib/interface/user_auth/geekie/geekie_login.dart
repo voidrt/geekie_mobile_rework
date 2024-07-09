@@ -1,6 +1,6 @@
 import 'dart:ui';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:geekreep/core/provider/user_authentication_helper.dart';
+import 'package:geekreep/core/utils/utils.dart';
 import 'package:geekreep/interface/global/buttons/arrow_back_icon_button.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:flutter/material.dart';
@@ -19,91 +19,95 @@ class GeekieLoginScreen extends StatelessWidget {
     final password = TextEditingController();
 
     return SafeArea(
-      child: Scaffold(
-        resizeToAvoidBottomInset: false,
-        body: Stack(
-          fit: StackFit.expand,
-          children: [
-            Positioned(
-              child: ImageFiltered(
-                imageFilter: ImageFilter.blur(
-                  sigmaX: 7,
-                  sigmaY: 7,
-                ),
-                child: Image.asset(
-                  'assets/images/loginBgWeb.png',
-                  fit: BoxFit.fitHeight,
+      child: GestureDetector(
+        onTap: () => Utils.unfocus(),
+        child: Scaffold(
+          resizeToAvoidBottomInset: false,
+          body: Stack(
+            fit: StackFit.expand,
+            children: [
+              Positioned(
+                child: ImageFiltered(
+                  imageFilter: ImageFilter.blur(
+                    sigmaX: 7,
+                    sigmaY: 7,
+                  ),
+                  child: Image.asset(
+                    'assets/images/loginBgWeb.png',
+                    fit: BoxFit.fitHeight,
+                  ),
                 ),
               ),
-            ),
-            Column(
-              children: [
-                const Padding(
-                  padding: EdgeInsets.only(
-                    bottom: Paddings.big,
-                  ),
-                  child: Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: ArrowBackIconButton(),
-                      ),
-                      Align(
-                        alignment: Alignment.center,
-                        child: WhiteGeekieIcon(),
-                      ),
-                    ],
-                  ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(
-                    vertical: Paddings.veryBig,
-                    horizontal: Paddings.defaultSize,
-                  ),
-                  child: Align(
-                    alignment: Alignment.center,
-                    child: SemiBoldHeadlineText(
-                      text: 'Acessar com uma conta Geekie One',
-                      colour: Colors.white,
+              Column(
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.only(
+                      bottom: Paddings.big,
+                    ),
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: ArrowBackIconButton(),
+                        ),
+                        Align(
+                          alignment: Alignment.center,
+                          child: WhiteGeekieIcon(),
+                        ),
+                      ],
                     ),
                   ),
-                ),
-                AppTextField(
-                  email,
-                  hintText: 'Nome de usuario ou email',
-                  icon: const Icon(
-                    LineIcons.user,
-                    color: Colors.white,
+                  const Padding(
+                    padding: EdgeInsets.symmetric(
+                      vertical: Paddings.veryBig,
+                      horizontal: Paddings.defaultSize,
+                    ),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: SemiBoldHeadlineText(
+                        text: 'Acessar com uma conta Geekie One',
+                        colour: Colors.white,
+                      ),
+                    ),
                   ),
-                  obscureText: false,
-                ),
-                AppTextField(
-                  password,
-                  hintText: 'Senha',
-                  icon: const Icon(
-                    LineIcons.lock,
-                    color: Colors.white,
+                  AppTextField(
+                    email,
+                    hintText: 'Nome de usuario ou email',
+                    icon: const Icon(
+                      LineIcons.user,
+                      color: Colors.white,
+                    ),
+                    obscureText: false,
                   ),
-                  obscureText: true,
-                ),
-                const SizedBox(
-                  height: Paddings.veryBig,
-                ),
-                StandardButton(
-                  margin: Paddings.big,
-                  backgroundColor: Theme.of(context).colorScheme.primary,
-                  text: 'Entrar',
-                  onTap: () {
-                    AuthHelper().signInWithEmail(
-                      email: email.text,
-                      password: password.text,
-                    );
-                  },
-                ),
-              ],
-            ),
-          ],
+                  AppTextField(
+                    password,
+                    hintText: 'Senha',
+                    icon: const Icon(
+                      LineIcons.lock,
+                      color: Colors.white,
+                    ),
+                    obscureText: true,
+                  ),
+                  const SizedBox(
+                    height: Paddings.veryBig,
+                  ),
+                  StandardButton(
+                    margin: Paddings.big,
+                    backgroundColor: Theme.of(context).colorScheme.primary,
+                    text: 'Entrar',
+                    onTap: () {
+                      Utils.unfocus();
+                      AuthHelper().signInWithEmail(
+                        email: email.text,
+                        password: password.text,
+                      );
+                    },
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

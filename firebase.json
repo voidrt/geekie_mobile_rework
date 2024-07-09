@@ -1,0 +1,1 @@
+{"flutter":{"platforms":{"android":{"default":{"projectId":"geekreep","appId":"1:264518515047:android:7acc7c4dac3026edf797c2","fileOutput":"android/app/google-services.json"}},"dart":{"lib/firebase_options.dart":{"projectId":"geekreep","configurations":{"android":"1:264518515047:android:7acc7c4dac3026edf797c2","ios":"1:264518515047:ios:9d953c85f781e04df797c2"}}}}}}
