@@ -1,0 +1,50 @@
+name: geekreep
+description: geekreep
+
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.1.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_riverpod:
+  shared_preferences:
+  go_router:
+  url_launcher_android:
+  url_launcher_ios:
+  firebase_core:
+  firebase_auth:
+  google_sign_in:
+  flutter_svg:
+  line_icons: 
+  flutter_emoji:
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/icons/
+    - assets/fonts/
+    - assets/images/
+  fonts:
+    - family: Exo
+      fonts:
+        - asset: assets/fonts/Exo-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Exo-Semibold.ttf
+          weight: 600
+        - asset: assets/fonts/Exo-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Exo-Medium.ttf
+          weight: 300
+        - asset: assets/fonts/Exo-Light.ttf
+          weight: 200
