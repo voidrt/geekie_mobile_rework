@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:geekreep/core/provider/user_authentication_helper.dart';
-import 'package:geekreep/interface/home/layout/home_layout.dart';
+import 'package:geekreep/interface/home/home_layout.dart';
 import 'package:geekreep/interface/user_auth/login_options.dart';
 
 class AuthenticationCheckScreen extends StatefulWidget {

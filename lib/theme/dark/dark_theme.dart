@@ -22,6 +22,8 @@ class Dark {
       inverseSurface: DarkThemeColours.textColor,
       shadow: DarkThemeColours.black,
     ),
+    splashColor: Colors.transparent,
+    highlightColor: Colors.transparent,
     dividerTheme: const DividerThemeData(
       thickness: 0.5,
       color: DarkThemeColours.textColor,
