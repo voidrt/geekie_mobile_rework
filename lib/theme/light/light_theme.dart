@@ -24,6 +24,8 @@ class Light {
     dividerTheme: const DividerThemeData(
       thickness: 0.5,
     ),
+    splashColor: Colors.transparent,
+    highlightColor: Colors.transparent,
     buttonTheme: const ButtonThemeData(
       splashColor: Colors.transparent,
     ),
