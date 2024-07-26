@@ -58,7 +58,7 @@ class LoginOptionsScreen extends ConsumerWidget {
                 SemiBoldStandardText(
                   text: 'ou',
                   padding: Paddings.extraSmall,
-                  color: Theme.of(context).colorScheme.background,
+                  colour: Theme.of(context).colorScheme.background,
                 ),
                 StandardButton(
                   onTap: () {},

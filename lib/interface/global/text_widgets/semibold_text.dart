@@ -5,12 +5,12 @@ class SemiBoldStandardText extends StatelessWidget {
   const SemiBoldStandardText({
     super.key,
     required this.text,
-    this.color,
+    this.colour,
     this.padding,
   });
 
   final String text;
-  final Color? color;
+  final Color? colour;
   final double? padding;
 
   @override
@@ -22,7 +22,7 @@ class SemiBoldStandardText extends StatelessWidget {
         style: TextStyle(
           fontWeight: FontWeight.w600,
           fontSize: 16,
-          color: color ?? Theme.of(context).colorScheme.surface,
+          color: colour ?? Theme.of(context).colorScheme.surface,
           fontFamily: 'Exo',
         ),
       ),
@@ -36,11 +36,13 @@ class SemiBoldHeadlineText extends StatelessWidget {
     required this.text,
     this.padding,
     this.colour,
+    this.textAlign,
   });
 
   final String text;
   final double? padding;
   final Color? colour;
+  final TextAlign? textAlign;
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +50,7 @@ class SemiBoldHeadlineText extends StatelessWidget {
       padding: EdgeInsets.all(padding ?? Paddings.extraSmall),
       child: Text(
         text,
-        textAlign: TextAlign.center,
+        textAlign: textAlign ?? TextAlign.center,
         style: Theme.of(context).textTheme.headlineSmall!.copyWith(
               color: colour ?? Theme.of(context).colorScheme.surface,
             ),

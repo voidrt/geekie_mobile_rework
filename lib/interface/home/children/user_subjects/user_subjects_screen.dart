@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:geekreep/core/model/user_classes/classs_subjects_model.dart';
+import 'package:geekreep/core/model/classes/classs_subjects_model.dart';
 import 'package:geekreep/core/provider/user_classes_provider.dart';
-import 'package:geekreep/interface/global/buttons/standard_button.dart';
+import 'package:geekreep/interface/home/children/user_subjects/subject_item.dart';
 
 class MateriasScreen extends ConsumerWidget {
-  const MateriasScreen({super.key});
+  const MateriasScreen({
+    super.key,
+    required this.screenSize,
+  });
+
+  final Size screenSize;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -13,9 +18,7 @@ class MateriasScreen extends ConsumerWidget {
 
     return availableSubjects.when(
       error: ((error, stackTrace) {
-        return Container(
-          child: Text(error.toString()),
-        );
+        return Text(error.toString());
       }),
       loading: () => const Center(child: CircularProgressIndicator()),
       data: (subjects) {
@@ -27,10 +30,9 @@ class MateriasScreen extends ConsumerWidget {
                 itemBuilder: (context, index) {
                   ClassSubject indexedSubject = subjects[index];
 
-                  return Container(
-                    decoration: BoxDecoration(color: indexedSubject.color),
-                    margin: const EdgeInsets.all(8),
-                    child: Text(indexedSubject.name ?? ''),
+                  return SubjectItem(
+                    subject: indexedSubject,
+                    screenHeight: screenSize.height,
                   );
                 },
               ),

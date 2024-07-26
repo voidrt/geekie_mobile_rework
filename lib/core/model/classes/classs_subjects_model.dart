@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:geekreep/core/model/user_classes/content_chapter_model.dart';
+import 'package:geekreep/core/model/classes/content_chapter_model.dart';
 
 class ClassSubject {
   ClassSubject({
@@ -8,6 +8,7 @@ class ClassSubject {
     this.contentList,
     this.color,
   });
+
   String? name;
   String? teacherName;
   List<Chapters>? contentList;

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:geekreep/interface/home/children/materias.dart';
+import 'package:geekreep/interface/home/children/user_subjects/user_subjects_screen.dart';
 import 'package:geekreep/interface/home/children/minha_semana.dart';
 import 'package:geekreep/interface/home/children/profile.dart';
 import 'package:geekreep/interface/home/navigation/navigation_bar.dart';
@@ -22,6 +22,8 @@ class _HomeScreenLayoutState extends ConsumerState<HomeScreenLayout> {
 
   @override
   Widget build(BuildContext context) {
+    final MediaQueryData mediaQuery = MediaQuery.of(context);
+
     return Scaffold(
       bottomNavigationBar: AppNavigationBar(
         currentIndex: currentIndex,
@@ -29,7 +31,9 @@ class _HomeScreenLayoutState extends ConsumerState<HomeScreenLayout> {
       ),
       body: SafeArea(
         child: [
-          const MateriasScreen(),
+          MateriasScreen(
+            screenSize: mediaQuery.size,
+          ),
           const MinhaSemanaScreen(),
           const ProfileScreen(),
         ].elementAt(currentIndex),

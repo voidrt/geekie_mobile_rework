@@ -1,5 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:geekreep/core/model/user_classes/classs_subjects_model.dart';
+import 'package:geekreep/core/model/classes/classs_subjects_model.dart';
 import 'package:geekreep/theme/light/colors.dart';
 
 FutureProvider<List<ClassSubject>> userClassesProvider = FutureProvider(
