@@ -5,7 +5,6 @@ import 'package:geekreep/theme/text_theme.dart';
 class Light {
   static var appTheme = ThemeData(
     fontFamily: 'Exo',
-    useMaterial3: true,
     scaffoldBackgroundColor: LightThemeColours.background,
     textTheme: const TextTheme(
       displaySmall: GeekieTextStyle.subtitleText,
@@ -19,6 +18,7 @@ class Light {
       onBackground: LightThemeColours.white,
       surface: LightThemeColours.black,
       inverseSurface: LightThemeColours.white,
+      onSurface: LightThemeColours.lightGrey,
       shadow: LightThemeColours.black,
     ),
     dividerTheme: const DividerThemeData(

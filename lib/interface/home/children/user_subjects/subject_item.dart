@@ -34,17 +34,27 @@ class SubjectItem extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              subject.name!,
-              style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                    color: subject.color,
-                    fontWeight: FontWeight.bold,
-                  ),
+            Row(
+              children: [
+                Text(
+                  '${subject.name!} -',
+                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                        color: subject.color,
+                        fontWeight: FontWeight.bold,
+                      ),
+                ),
+                Text(
+                  ' 15 Capitulos',
+                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                        fontSize: 18,
+                      ),
+                ),
+              ],
             ),
             SemiBoldStandardText(
               text: 'Prof. ${subject.teacherName!}',
               padding: 0,
-              colour: Theme.of(context).colorScheme.onSurface.withOpacity(0.8),
+              colour: Theme.of(context).colorScheme.onSurface,
             ),
           ],
         ),
