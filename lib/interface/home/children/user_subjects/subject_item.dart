@@ -2,21 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:geekreep/core/model/classes/classs_subjects_model.dart';
 import 'package:geekreep/interface/global/buttons/standard_button.dart';
 import 'package:geekreep/interface/global/text_widgets/semibold_text.dart';
+import 'package:geekreep/interface/global/text_widgets/standard_text.dart';
 import 'package:geekreep/theme/paddings.dart';
-import 'package:go_router/go_router.dart';
+import 'package:line_icons/line_icons.dart';
 
 class SubjectItem extends StatelessWidget {
   const SubjectItem({
     super.key,
     required this.subject,
-    required this.screenHeight,
+    required this.screenSize,
   });
 
   final ClassSubject subject;
-  final double screenHeight;
+  final Size screenSize;
 
   @override
   Widget build(BuildContext context) {
+    final contentList = subject.contentList;
+    final chapterIndex = subject.activeChapterIndex ?? 0;
+    final contentListLength = contentList?.length ?? 0;
+
     return Container(
       margin: const EdgeInsets.symmetric(
         vertical: Paddings.small,
@@ -28,7 +33,7 @@ class SubjectItem extends StatelessWidget {
           Radius.circular(12),
         ),
       ),
-      height: screenHeight / 5,
+      height: screenSize.height / 5,
       child: Padding(
         padding: const EdgeInsets.all(Paddings.defaultSize),
         child: Column(
@@ -43,19 +48,63 @@ class SubjectItem extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                 ),
-                Text(
-                  ' 15 Capitulos',
-                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                        fontSize: 18,
-                      ),
+                StandardBodyText(
+                  text: contentListLength > 1
+                      ? ' $contentListLength Capitulos'
+                      : ' 1 Capitulo',
                 ),
               ],
             ),
-            SemiBoldStandardText(
+            SemiBoldBodyText(
               text: 'Prof. ${subject.teacherName!}',
               padding: 0,
               colour: Theme.of(context).colorScheme.onSurface,
             ),
+            const SizedBox(height: Paddings.defaultSize),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(
+                  LineIcons.bookmarkAlt,
+                  size: 20,
+                  color:
+                      Theme.of(context).colorScheme.onSurface.withOpacity(0.8),
+                ),
+                const SizedBox(
+                  width: Paddings.small / 2,
+                ),
+                Flexible(
+                  child: StandardBodyText(
+                    text: '- ${contentList!.elementAt(chapterIndex).name}',
+                    padding: 0,
+                    colour: Theme.of(context).colorScheme.onSurface,
+                  ),
+                ),
+              ],
+            ),
+            const Spacer(),
+            const Divider(),
+            Row(
+              children: [
+                const Spacer(),
+                StandardButton(
+                  bold: false,
+                  onTap: () {},
+                  text: "Acessar conteudo",
+                  backgroundColor: Theme.of(context).colorScheme.onBackground,
+                  margin: 0,
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: Paddings.defaultSize,
+                    vertical: Paddings.small,
+                  ),
+                  border: Border.all(
+                    color: subject.color!,
+                    width: 1,
+                  ),
+                ),
+              ],
+            )
           ],
         ),
       ),

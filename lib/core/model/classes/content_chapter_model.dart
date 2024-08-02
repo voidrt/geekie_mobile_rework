@@ -1,5 +1,5 @@
-class Chapters {
-  Chapters({
+class Chapter {
+  Chapter({
     this.name,
     this.pagesCount,
   });

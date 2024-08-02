@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:geekreep/theme/paddings.dart';
 
-class SemiBoldBodyText extends StatelessWidget {
-  const SemiBoldBodyText({
+class StandardBodyText extends StatelessWidget {
+  const StandardBodyText({
     super.key,
     required this.text,
     this.colour,
@@ -22,7 +22,6 @@ class SemiBoldBodyText extends StatelessWidget {
       child: Text(
         text,
         style: Theme.of(context).textTheme.displayMedium!.copyWith(
-              fontWeight: FontWeight.w600,
               color: colour ?? Theme.of(context).colorScheme.surface,
               fontFamily: 'Exo',
               overflow: overflow ?? TextOverflow.fade,
@@ -32,8 +31,8 @@ class SemiBoldBodyText extends StatelessWidget {
   }
 }
 
-class SemiBoldHeadlineText extends StatelessWidget {
-  const SemiBoldHeadlineText({
+class StandardHeadlineText extends StatelessWidget {
+  const StandardHeadlineText({
     super.key,
     required this.text,
     this.padding,

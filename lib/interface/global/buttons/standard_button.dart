@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:geekreep/interface/global/text_widgets/semibold_text.dart';
+import 'package:geekreep/interface/global/text_widgets/standard_text.dart';
 import 'package:geekreep/theme/paddings.dart';
 
 class StandardButton extends StatelessWidget {
@@ -13,6 +14,8 @@ class StandardButton extends StatelessWidget {
     this.margin,
     this.roundness = 50.0,
     this.leadingIcon,
+    this.border,
+    required this.bold,
   });
 
   final Function onTap;
@@ -21,14 +24,16 @@ class StandardButton extends StatelessWidget {
   final String? leadingIcon;
   final Color? backgroundColor;
   final double? margin;
-  final double? padding;
+  final EdgeInsets? padding;
+  final Border? border;
+  final bool bold;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => onTap(),
       child: Container(
-        padding: EdgeInsets.all(padding ?? 8),
+        padding: padding ?? const EdgeInsets.all(8),
         margin: EdgeInsets.symmetric(
           horizontal: margin ?? Paddings.veryBig,
           vertical: Paddings.extraSmall,
@@ -36,6 +41,7 @@ class StandardButton extends StatelessWidget {
         decoration: BoxDecoration(
           color: backgroundColor ?? Theme.of(context).colorScheme.onBackground,
           borderRadius: BorderRadius.circular(roundness),
+          border: border ?? const Border(),
         ),
         child: Center(
           child: Stack(
@@ -52,9 +58,11 @@ class StandardButton extends StatelessWidget {
               ),
               Align(
                 alignment: Alignment.center,
-                child: SemiBoldStandardText(
-                  text: text,
-                ),
+                child: bold
+                    ? SemiBoldBodyText(
+                        text: text,
+                      )
+                    : StandardBodyText(text: text),
               )
             ],
           ),

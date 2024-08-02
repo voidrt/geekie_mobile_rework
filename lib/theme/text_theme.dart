@@ -19,7 +19,7 @@ class GeekieTextStyle {
 }
 
 class GeekieTextSizes {
-  static const double smallBodyTextSize = 16;
-  static const double bodyTextSize = 18;
-  static const double headlineTextSize = 28;
+  static const double smallBodyTextSize = 14;
+  static const double bodyTextSize = 16;
+  static const double headlineTextSize = 24;
 }

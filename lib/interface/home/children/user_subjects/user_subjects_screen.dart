@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:geekreep/core/model/classes/classs_subjects_model.dart';
-import 'package:geekreep/core/provider/user_classes_provider.dart';
+import 'package:geekreep/core/provider/user_class_subjects_provider.dart';
 import 'package:geekreep/interface/home/children/user_subjects/subject_item.dart';
 
 class MateriasScreen extends ConsumerWidget {
@@ -14,7 +14,7 @@ class MateriasScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final availableSubjects = ref.watch(userClassesProvider);
+    final availableSubjects = ref.watch(userClassSubjectsProvider);
 
     return availableSubjects.when(
       error: ((error, stackTrace) {
@@ -32,7 +32,7 @@ class MateriasScreen extends ConsumerWidget {
 
                   return SubjectItem(
                     subject: indexedSubject,
-                    screenHeight: screenSize.height,
+                    screenSize: screenSize,
                   );
                 },
               ),

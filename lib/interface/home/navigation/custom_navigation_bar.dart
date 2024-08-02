@@ -25,13 +25,20 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
         padding: const EdgeInsets.symmetric(horizontal: 24),
         margin: const EdgeInsets.symmetric(
           horizontal: Paddings.small,
-          vertical: Paddings.small,
+          vertical: Paddings.medium,
         ),
         decoration: BoxDecoration(
           color: Theme.of(context).colorScheme.onBackground,
           borderRadius: const BorderRadius.all(
-            Radius.circular(50),
+            Radius.circular(25),
           ),
+          boxShadow: [
+            BoxShadow(
+              blurRadius: 10,
+              color: Theme.of(context).colorScheme.onSurface.withOpacity(0.2),
+              offset: const Offset(0, 3),
+            )
+          ],
         ),
         child: TabBar(
           labelStyle: GeekieTextStyle.subtitleText,
@@ -42,7 +49,7 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
           dividerColor: Colors.transparent,
           indicator: const BoxDecoration(),
           unselectedLabelColor:
-              Theme.of(context).colorScheme.shadow.withOpacity(0.7),
+              Theme.of(context).colorScheme.onSurface.withOpacity(0.7),
           tabs: const [
             Tab(
               text: 'Materias',

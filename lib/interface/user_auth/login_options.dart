@@ -44,6 +44,7 @@ class LoginOptionsScreen extends ConsumerWidget {
                   ),
                 ),
                 StandardButton(
+                  bold: true,
                   onTap: () {
                     context.pushNamed('Geekie Login');
                   },
@@ -51,26 +52,30 @@ class LoginOptionsScreen extends ConsumerWidget {
                   text: 'Com uma conta Geekie One',
                 ),
                 StandardButton(
+                  bold: true,
                   onTap: () {},
                   leadingIcon: 'qrcode.svg',
                   text: 'Com QR Code - até 5º ano',
                 ),
-                SemiBoldStandardText(
+                SemiBoldBodyText(
                   text: 'ou',
                   padding: Paddings.extraSmall,
                   colour: Theme.of(context).colorScheme.background,
                 ),
                 StandardButton(
+                  bold: true,
                   onTap: () {},
                   leadingIcon: 'googleLogo.svg',
                   text: 'Acessar com Google',
                 ),
                 StandardButton(
+                  bold: true,
                   onTap: () {},
                   leadingIcon: 'appleLogo.svg',
                   text: 'Acessar com Apple',
                 ),
                 StandardButton(
+                  bold: true,
                   onTap: () {},
                   leadingIcon: 'microsoftLogo.svg',
                   text: 'Acessar com Microsoft',
@@ -83,6 +88,7 @@ class LoginOptionsScreen extends ConsumerWidget {
                   ),
                 ),
                 StandardButton(
+                  bold: true,
                   onTap: () {},
                   text: 'Ativar novo material',
                   backgroundColor: Theme.of(context).colorScheme.primary,

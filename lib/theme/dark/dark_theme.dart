@@ -5,7 +5,6 @@ import 'package:geekreep/theme/text_theme.dart';
 class Dark {
   static var appTheme = ThemeData(
     fontFamily: 'Exo',
-    useMaterial3: true,
     scaffoldBackgroundColor: DarkThemeColours.background,
     platform: TargetPlatform.android,
     textTheme: const TextTheme(

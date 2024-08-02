@@ -93,6 +93,7 @@ class GeekieLoginScreen extends StatelessWidget {
                     height: Paddings.veryBig,
                   ),
                   StandardButton(
+                    bold: true,
                     margin: Paddings.big,
                     backgroundColor: Theme.of(context).colorScheme.primary,
                     text: 'Entrar',

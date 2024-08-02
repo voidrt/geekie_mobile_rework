@@ -7,10 +7,12 @@ class ClassSubject {
     this.teacherName,
     this.contentList,
     this.color,
+    this.activeChapterIndex,
   });
 
   String? name;
   String? teacherName;
-  List<Chapters>? contentList;
+  List<Chapter>? contentList;
   Color? color;
+  int? activeChapterIndex;
 }
