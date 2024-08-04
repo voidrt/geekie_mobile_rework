@@ -14,11 +14,9 @@ class Light {
     colorScheme: const ColorScheme.light(
       primary: LightThemeColours.primary,
       secondary: LightThemeColours.secondary,
-      background: LightThemeColours.background,
-      onBackground: LightThemeColours.white,
-      surface: LightThemeColours.black,
-      inverseSurface: LightThemeColours.white,
-      onSurface: LightThemeColours.lightGrey,
+      surface: LightThemeColours.background,
+      inverseSurface: LightThemeColours.black,
+      onSurface: LightThemeColours.white,
       shadow: LightThemeColours.black,
     ),
     dividerTheme: const DividerThemeData(

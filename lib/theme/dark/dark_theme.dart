@@ -15,8 +15,6 @@ class Dark {
     colorScheme: const ColorScheme.dark(
       primary: DarkThemeColours.primary,
       secondary: DarkThemeColours.secondary,
-      background: DarkThemeColours.background,
-      onBackground: DarkThemeColours.darkGrey,
       surface: DarkThemeColours.textColor,
       inverseSurface: DarkThemeColours.textColor,
       shadow: DarkThemeColours.black,

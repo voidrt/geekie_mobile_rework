@@ -28,7 +28,7 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
           vertical: Paddings.medium,
         ),
         decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.onBackground,
+          color: Theme.of(context).colorScheme.onSurface,
           borderRadius: const BorderRadius.all(
             Radius.circular(25),
           ),
@@ -49,7 +49,7 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
           dividerColor: Colors.transparent,
           indicator: const BoxDecoration(),
           unselectedLabelColor:
-              Theme.of(context).colorScheme.onSurface.withOpacity(0.7),
+              Theme.of(context).colorScheme.inverseSurface.withOpacity(0.7),
           tabs: const [
             Tab(
               text: 'Materias',

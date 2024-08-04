@@ -44,7 +44,7 @@ class LoginOptionsScreen extends ConsumerWidget {
                   ),
                 ),
                 StandardButton(
-                  bold: true,
+                  bold: false,
                   onTap: () {
                     context.pushNamed('Geekie Login');
                   },
@@ -52,7 +52,7 @@ class LoginOptionsScreen extends ConsumerWidget {
                   text: 'Com uma conta Geekie One',
                 ),
                 StandardButton(
-                  bold: true,
+                  bold: false,
                   onTap: () {},
                   leadingIcon: 'qrcode.svg',
                   text: 'Com QR Code - até 5º ano',
@@ -60,22 +60,22 @@ class LoginOptionsScreen extends ConsumerWidget {
                 SemiBoldBodyText(
                   text: 'ou',
                   padding: Paddings.extraSmall,
-                  colour: Theme.of(context).colorScheme.background,
+                  colour: Theme.of(context).colorScheme.surface,
                 ),
                 StandardButton(
-                  bold: true,
+                  bold: false,
                   onTap: () {},
                   leadingIcon: 'googleLogo.svg',
                   text: 'Acessar com Google',
                 ),
                 StandardButton(
-                  bold: true,
+                  bold: false,
                   onTap: () {},
                   leadingIcon: 'appleLogo.svg',
                   text: 'Acessar com Apple',
                 ),
                 StandardButton(
-                  bold: true,
+                  bold: false,
                   onTap: () {},
                   leadingIcon: 'microsoftLogo.svg',
                   text: 'Acessar com Microsoft',
@@ -91,7 +91,8 @@ class LoginOptionsScreen extends ConsumerWidget {
                   bold: true,
                   onTap: () {},
                   text: 'Ativar novo material',
-                  backgroundColor: Theme.of(context).colorScheme.primary,
+                  textColour: Theme.of(context).colorScheme.surface,
+                  backgroundColour: Theme.of(context).colorScheme.primary,
                 ),
               ],
             ),

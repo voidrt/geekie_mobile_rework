@@ -22,8 +22,7 @@ class StandardBodyText extends StatelessWidget {
       child: Text(
         text,
         style: Theme.of(context).textTheme.displayMedium!.copyWith(
-              color: colour ?? Theme.of(context).colorScheme.surface,
-              fontFamily: 'Exo',
+              color: colour ?? Theme.of(context).colorScheme.inverseSurface,
               overflow: overflow ?? TextOverflow.fade,
             ),
       ),

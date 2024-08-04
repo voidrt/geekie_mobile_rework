@@ -28,12 +28,12 @@ class SubjectItem extends StatelessWidget {
         horizontal: Paddings.defaultSize,
       ),
       decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.onBackground,
+        color: Theme.of(context).colorScheme.onSurface,
         borderRadius: const BorderRadius.all(
           Radius.circular(12),
         ),
       ),
-      height: screenSize.height / 5,
+      height: screenSize.height / 4,
       child: Padding(
         padding: const EdgeInsets.all(Paddings.defaultSize),
         child: Column(
@@ -58,7 +58,7 @@ class SubjectItem extends StatelessWidget {
             SemiBoldBodyText(
               text: 'Prof. ${subject.teacherName!}',
               padding: 0,
-              colour: Theme.of(context).colorScheme.onSurface,
+              colour: Theme.of(context).colorScheme.inverseSurface,
             ),
             const SizedBox(height: Paddings.defaultSize),
             Row(
@@ -68,8 +68,10 @@ class SubjectItem extends StatelessWidget {
                 Icon(
                   LineIcons.bookmarkAlt,
                   size: 20,
-                  color:
-                      Theme.of(context).colorScheme.onSurface.withOpacity(0.8),
+                  color: Theme.of(context)
+                      .colorScheme
+                      .inverseSurface
+                      .withOpacity(0.8),
                 ),
                 const SizedBox(
                   width: Paddings.small / 2,
@@ -78,13 +80,12 @@ class SubjectItem extends StatelessWidget {
                   child: StandardBodyText(
                     text: '- ${contentList!.elementAt(chapterIndex).name}',
                     padding: 0,
-                    colour: Theme.of(context).colorScheme.onSurface,
+                    colour: Theme.of(context).colorScheme.inverseSurface,
                   ),
                 ),
               ],
             ),
             const Spacer(),
-            const Divider(),
             Row(
               children: [
                 const Spacer(),
@@ -92,7 +93,7 @@ class SubjectItem extends StatelessWidget {
                   bold: false,
                   onTap: () {},
                   text: "Acessar conteudo",
-                  backgroundColor: Theme.of(context).colorScheme.onBackground,
+                  backgroundColour: Theme.of(context).colorScheme.onSurface,
                   margin: 0,
                   padding: const EdgeInsets.symmetric(
                     horizontal: Paddings.defaultSize,

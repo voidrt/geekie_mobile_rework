@@ -95,7 +95,7 @@ class GeekieLoginScreen extends StatelessWidget {
                   StandardButton(
                     bold: true,
                     margin: Paddings.big,
-                    backgroundColor: Theme.of(context).colorScheme.primary,
+                    backgroundColour: Theme.of(context).colorScheme.primary,
                     text: 'Entrar',
                     onTap: () {
                       Utils.unfocus();

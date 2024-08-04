@@ -9,7 +9,8 @@ class StandardButton extends StatelessWidget {
     super.key,
     required this.onTap,
     required this.text,
-    this.backgroundColor,
+    this.backgroundColour,
+    this.textColour,
     this.padding,
     this.margin,
     this.roundness = 50.0,
@@ -22,7 +23,8 @@ class StandardButton extends StatelessWidget {
   final String text;
   final double roundness;
   final String? leadingIcon;
-  final Color? backgroundColor;
+  final Color? backgroundColour;
+  final Color? textColour;
   final double? margin;
   final EdgeInsets? padding;
   final Border? border;
@@ -39,7 +41,7 @@ class StandardButton extends StatelessWidget {
           vertical: Paddings.extraSmall,
         ),
         decoration: BoxDecoration(
-          color: backgroundColor ?? Theme.of(context).colorScheme.onBackground,
+          color: backgroundColour ?? Theme.of(context).colorScheme.onSurface,
           borderRadius: BorderRadius.circular(roundness),
           border: border ?? const Border(),
         ),
@@ -61,8 +63,12 @@ class StandardButton extends StatelessWidget {
                 child: bold
                     ? SemiBoldBodyText(
                         text: text,
+                        colour: textColour,
                       )
-                    : StandardBodyText(text: text),
+                    : StandardBodyText(
+                        text: text,
+                        colour: textColour,
+                      ),
               )
             ],
           ),

@@ -23,8 +23,7 @@ class SemiBoldBodyText extends StatelessWidget {
         text,
         style: Theme.of(context).textTheme.displayMedium!.copyWith(
               fontWeight: FontWeight.w600,
-              color: colour ?? Theme.of(context).colorScheme.surface,
-              fontFamily: 'Exo',
+              color: colour ?? Theme.of(context).colorScheme.inverseSurface,
               overflow: overflow ?? TextOverflow.fade,
             ),
       ),
