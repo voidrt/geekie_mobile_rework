@@ -8,12 +8,14 @@ class AppTextField extends StatefulWidget {
     required this.hintText,
     required this.obscureText,
     this.icon,
+    this.foregroundColor,
   });
 
   final TextEditingController _controller;
   final String hintText;
   final bool obscureText;
   final Icon? icon;
+  final Color? foregroundColor;
 
   @override
   State<AppTextField> createState() => _AppTextFieldState();
@@ -39,12 +41,21 @@ class _AppTextFieldState extends State<AppTextField> {
         style: Theme.of(context)
             .textTheme
             .bodyMedium!
-            .copyWith(color: Colors.white),
+            .copyWith(color: widget.foregroundColor ?? Colors.white),
         decoration: InputDecoration(
           hintText: widget.hintText,
           hintStyle: Theme.of(context).textTheme.displaySmall!.copyWith(
-                color: Theme.of(context).colorScheme.inverseSurface,
+                color: widget.foregroundColor ??
+                    Theme.of(context).colorScheme.inverseSurface,
               ),
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(
+              color: widget.foregroundColor ?? Colors.white,
+            ),
+            borderRadius: const BorderRadius.all(
+              Radius.circular(2),
+            ),
+          ),
           icon: widget.icon,
         ),
       ),

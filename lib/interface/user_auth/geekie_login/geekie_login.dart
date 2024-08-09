@@ -74,6 +74,7 @@ class GeekieLoginScreen extends StatelessWidget {
                   AppTextField(
                     email,
                     hintText: 'Nome de usuario ou email',
+                    foregroundColor: Theme.of(context).colorScheme.surface,
                     icon: const Icon(
                       LineIcons.user,
                       color: Colors.white,
@@ -83,6 +84,7 @@ class GeekieLoginScreen extends StatelessWidget {
                   AppTextField(
                     password,
                     hintText: 'Senha',
+                    foregroundColor: Theme.of(context).colorScheme.surface,
                     icon: const Icon(
                       LineIcons.lock,
                       color: Colors.white,
