@@ -52,7 +52,7 @@ class StandardHeadlineText extends StatelessWidget {
         text,
         textAlign: textAlign ?? TextAlign.center,
         style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-              color: colour ?? Theme.of(context).colorScheme.surface,
+              color: colour ?? Theme.of(context).colorScheme.shadow,
             ),
       ),
     );

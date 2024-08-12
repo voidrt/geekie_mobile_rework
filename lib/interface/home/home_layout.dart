@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:geekreep/interface/home/children/user_subjects/user_subjects_screen.dart';
-import 'package:geekreep/interface/home/children/minha_semana.dart';
-import 'package:geekreep/interface/home/children/profile.dart';
+import 'package:geekreep/interface/home/children/semana/minha_semana.dart';
+import 'package:geekreep/interface/home/children/profile/profile.dart';
 import 'package:geekreep/interface/home/navigation/custom_navigation_bar.dart';
 
 class HomeScreenLayout extends ConsumerStatefulWidget {
